@@ -15,7 +15,7 @@ public class MovieRemoveListener extends ListenerClass implements ActionListener
     }
 
     // removes a movie with GUI
-    // clears and sorts
+    // clears and sorts //
     @Override
     public void actionPerformed(ActionEvent ae) {
         String title = MovieRecordListener.nameField().getText();
