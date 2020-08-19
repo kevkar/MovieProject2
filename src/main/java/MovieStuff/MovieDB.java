@@ -30,7 +30,7 @@ public class MovieDB {
                 System.out.println("You forgot to enter a movie");
             } else {
                 movieList.add(movie);
-                System.out.println("Movie " + '"' + movie.getName() + '"' + " successfully added.");
+                System.out.println("Movie " + '"' + movie.getName() + '"' + " added with time " + movie.getRealTime());
             }
         }
 
