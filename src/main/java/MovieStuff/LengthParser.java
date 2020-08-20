@@ -14,7 +14,7 @@ public class LengthParser {
         StringBuilder sb = new StringBuilder(google);
         String searched = filmName;
         searched = searched.replace(" ","+");
-        String filmLength = "+length";
+        String filmLength = "+film+length";
 
         sb.append(searched);
         sb.append(filmLength);

@@ -7,7 +7,7 @@ public class MovieSiteListener extends ListenerClass implements ActionListener {
 
     public MovieSiteListener() { }
 
-    // opens letterboxd site with GUI
+    // opens google site with GUI
     @Override
     public void actionPerformed(ActionEvent ae) {
         db.googleMovie(MovieRecordListener.text());

@@ -13,7 +13,6 @@ public class MovieClearAllListener extends ListenerClass implements ActionListen
     // resets database with GUI
     @Override
     public void actionPerformed(ActionEvent ae) {
-        //MovieDB db = MovieRecordListener.getDB();
         try {
             db.reset();
             db.clearTextFile();

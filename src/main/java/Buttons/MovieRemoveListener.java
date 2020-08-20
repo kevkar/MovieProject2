@@ -18,8 +18,7 @@ public class MovieRemoveListener extends ListenerClass implements ActionListener
     // clears and sorts //
     @Override
     public void actionPerformed(ActionEvent ae) {
-        String title = MovieRecordListener.nameField().getText();
-        db.removeMovie(title);
+        db.removeMovie(MovieRecordListener.text());
         try {
             db.clearAndAddMovies();
             MovieListListener.listenLabel().setText(db.toString());

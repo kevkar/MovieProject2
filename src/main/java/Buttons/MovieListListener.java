@@ -9,9 +9,6 @@ public class MovieListListener extends ListenerClass implements ActionListener {
 
     private static JTextArea label = new JTextArea(db.toString());
 
-    public MovieListListener() {
-    }
-
     // prints the database with GUI
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -23,11 +20,4 @@ public class MovieListListener extends ListenerClass implements ActionListener {
     {
         return label;
     }
-
-    public static String movies()
-    {
-        return db.toString();
-    }
-
-
 }

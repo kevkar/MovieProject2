@@ -1,11 +1,9 @@
 package Buttons;
 
 import java.awt.event.*;
-import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
 import javax.swing.*;
-import MovieStuff.*;
+
 
 public class MovieRecordListener extends ListenerClass implements ActionListener {
 
@@ -31,15 +29,9 @@ public class MovieRecordListener extends ListenerClass implements ActionListener
         return idField.getText();
     }
 
-    public static JTextField IDField() {return idField;}
-
     @Override
     public void actionPerformed(ActionEvent ae) {
         try {
-            if (db.isMovieDuplicate(MovieRecordListener.nameField().getText())) {
-                PrinterToConsole.printText("Movie already in database!");
-                return;
-            }
 
             db.addMovieGUI();
 

@@ -48,6 +48,11 @@ public class MovieDB {
         public void addMovieGUI() throws IOException {
             String text = MovieRecordListener.text();
 
+            if (isMovieDuplicate(text)) {
+                PrinterToConsole.printText("Movie already in database!");
+                return;
+            }
+
             if (text.isEmpty()) {
                 PrinterToConsole.printText("Please enter a movie!");
             } else {
