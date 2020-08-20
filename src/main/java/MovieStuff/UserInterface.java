@@ -20,7 +20,7 @@ public class UserInterface implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Movie Time");
-        frame.setPreferredSize(new Dimension(700, 700));
+        frame.setPreferredSize(new Dimension(800, 600));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,20 +50,20 @@ public class UserInterface implements Runnable {
         JButton movieInfoButton = new JButton("Movie info");
         JButton clearDB = new JButton("Remove all Movies");
         JButton addButton = new JButton("Add!");
-        JButton listMoviesText = new JButton("   List Movies");
-        JButton undoButton = new JButton("Undo");
+        JLabel listMoviesText = new JLabel("List of Movies",SwingConstants.CENTER);
+        JButton randomMovie = new JButton("Random Movie");
+        JLabel stuffToPrint = PrinterToConsole.printArea();
 
         MovieRecordListener listener = new MovieRecordListener(nameField, idField);
         addButton.addActionListener(listener);
         movieInfoButton.addActionListener(new MovieSiteListener());
         removeButton.addActionListener(new MovieRemoveListener());
         clearDB.addActionListener(new MovieClearAllListener());
-        listMoviesText.addActionListener(new MovieListListener());
+        randomMovie.addActionListener(new RandomMovieListener());
 
         JTextArea moviesList = MovieListListener.listenLabel();
         JScrollPane scrollableArea= new JScrollPane(moviesList);
         scrollableArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-
 
         container.add(nameText);
         container.add(nameField);
@@ -73,10 +73,10 @@ public class UserInterface implements Runnable {
         container.add(scrollableArea);
         container.add(removeButton);
         container.add(addButton);
-        container.add(new JLabel(" "));
+        container.add(stuffToPrint);
         container.add(movieInfoButton);
         container.add(clearDB);
-        container.add(undoButton);
+        container.add(randomMovie);
 
 
     }

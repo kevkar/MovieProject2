@@ -22,6 +22,7 @@ public class MovieRemoveListener extends ListenerClass implements ActionListener
         db.removeMovie(title);
         try {
             db.clearAndAddMovies();
+            MovieListListener.listenLabel().setText(db.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }

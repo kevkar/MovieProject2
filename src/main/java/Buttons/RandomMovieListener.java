@@ -11,7 +11,6 @@ public class RandomMovieListener extends ListenerClass implements ActionListener
     // shows random movie with GUI
     @Override
     public void actionPerformed(ActionEvent ae) {
-        //MovieDB db = MovieRecordListener.getDB();
         db.printRandomMovie();
     }
 }

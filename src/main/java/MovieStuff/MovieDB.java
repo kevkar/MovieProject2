@@ -19,18 +19,17 @@ public class MovieDB {
 
         // adds movies to the array list
         public void addMovie(Movie movie) throws IOException {
-
             if (isMovieDuplicate(movie.getName())) {
-                System.out.println("Movie " + '"' + movie.getName() + '"' + " already in database.");
+                PrinterToConsole.printText("Movie " + '"' + movie.getName() + '"' + " already in database.");
             } else if (movie.getLength() > 400) {
-                System.out.println("Why are you trying to watch a 6 hour movie c'mon.");
+                PrinterToConsole.printText("Why are you trying to watch a 6 hour movie c'mon.");
             } else if(movie.getLength() < 10) {
-                System.out.println("That is not a real length");
-            } else if (movie.getName().equals("")) {
-                System.out.println("You forgot to enter a movie");
+                PrinterToConsole.printText("That is not a real length");
+            } else if (movie.getName().isEmpty()) {
+                PrinterToConsole.printText("You forgot to enter a movie");
             } else {
                 movieList.add(movie);
-                System.out.println("Movie " + '"' + movie.getName() + '"' + " added with time " + movie.getRealTime());
+                PrinterToConsole.printText('"' + movie.getName() + '"' + " added with time " + movie.getRealTime());
             }
         }
 
@@ -48,17 +47,16 @@ public class MovieDB {
             String text = MovieRecordListener.nameField().getText();
 
             if (text.isEmpty()) {
-                System.out.println("That is not a movie.");
+                PrinterToConsole.printText("Please enter a movie!");
             } else {
                 try {
-                    //int length = Integer.parseInt(MovieRecordListener.IDField().getText());
                     Movie movie = new Movie(text);
                     addMovie(movie);
                 } catch (Exception e) {
                     if (MovieRecordListener.IDField().getText().equals("")) {
-                        System.out.println("Please enter length.");
+                        PrinterToConsole.printText("Please enter length.");
                     } else {
-                        System.out.println("Invalid Movie");
+                        PrinterToConsole.printText("Invalid Movie");
                     }
                 }
             }
@@ -85,12 +83,11 @@ public class MovieDB {
                 String searchedName = title.toLowerCase();
                 if (movieName.equals(searchedName)) {
                     movieList.remove(movie);
-
-                    System.out.println("Movie " + '"' + title + '"' + " successfully removed.");
+                    PrinterToConsole.printText("Movie " + '"' + title + '"' + " removed.");
                     return true;
                 }
             }
-            System.out.println("Movie not found");
+            PrinterToConsole.printText("Movie not found");
             return true;
         }
 
@@ -115,19 +112,19 @@ public class MovieDB {
         // prints the random movie
         public void printRandomMovie() {
             if (getMovieList().isEmpty()) {
-                System.out.println("Movie database is empty!");
+                PrinterToConsole.printText("Movie database is empty!");
             } else {
-                System.out.println("Random movie: " + randomMovie());
+                PrinterToConsole.printText(randomMovie().toString());
             }
         }
 
         // clears the entire movie list
         public void reset() {
             if (movieList.isEmpty()) {
-                System.out.println("There are no movies what are you doing");
+                PrinterToConsole.printText("There are no movies what are you doing");
             } else {
                 movieList.clear();
-                System.out.println("Movie database successfully cleared.");
+                PrinterToConsole.printText("Movie database successfully cleared.");
             }
         }
 
@@ -135,7 +132,7 @@ public class MovieDB {
        public void letterboxd(String name) {
           // String boxText = MovieRecordListener.nameField().getText();
            if (name.isEmpty()) {
-               System.out.println("Try typing something first...");
+               PrinterToConsole.printText("Try typing something first...");
            } else {
                try {
                    openMovieSite(name);

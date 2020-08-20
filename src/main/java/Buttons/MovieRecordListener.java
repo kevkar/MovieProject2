@@ -26,6 +26,12 @@ public class MovieRecordListener extends ListenerClass implements ActionListener
     @Override
     public void actionPerformed(ActionEvent ae) {
         try {
+            if (db.isMovieDuplicate(MovieRecordListener.nameField().getText()))
+            {
+                PrinterToConsole.printText("Movie already in database!");
+                return;
+            }
+
             db.addMovieGUI();
             MovieListListener.listenLabel().setText(db.toString());
         } catch (IOException e) {

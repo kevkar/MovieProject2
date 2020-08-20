@@ -10,7 +10,6 @@ public class MovieSiteListener extends ListenerClass implements ActionListener {
     // opens letterboxd site with GUI
     @Override
     public void actionPerformed(ActionEvent ae) {
-        //MovieDB db = MovieRecordListener.getDB();
         String boxText = MovieRecordListener.nameField().getText();
         db.letterboxd(boxText);
     }
