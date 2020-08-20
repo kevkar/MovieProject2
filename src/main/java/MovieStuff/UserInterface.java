@@ -12,11 +12,15 @@ public class UserInterface implements Runnable {
 
     public UserInterface() {    }
 
+    public JFrame getFrame() {
+        return frame;
+    }
+
     //creates GUI with title, dimensions
     @Override
     public void run() {
         frame = new JFrame("Movie Time");
-        frame.setPreferredSize(new Dimension(500, 700));
+        frame.setPreferredSize(new Dimension(700, 700));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -33,45 +37,49 @@ public class UserInterface implements Runnable {
     //creates the grid and buttons
     private void createComponents(Container container) throws Exception {
 
-        GridLayout layout = new GridLayout(6, 2);
+        TextFileManipulator.textFileStuff(ListenerClass.getDB());
+
+        GridLayout layout = new GridLayout(4, 3);
         container.setLayout(layout);
 
-        JLabel nameText = new JLabel("Movie Name: ");
+        JLabel nameText = new JLabel("  Movie Name: ");
         JTextField nameField = new JTextField();
-        JLabel idText = new JLabel("Movie Length: ");
+        JLabel idText = new JLabel("  Movie Length: ");
         JTextField idField = new JTextField("Manually enter length here if adding fails");
         JButton removeButton = new JButton("Remove!");
-        JButton randomMovieButton = new JButton("Random Movie");
         JButton movieInfoButton = new JButton("Movie info");
-        JButton listMovies = new JButton("List Movies");
         JButton clearDB = new JButton("Remove all Movies");
-
         JButton addButton = new JButton("Add!");
+        JButton listMoviesText = new JButton("   List Movies");
+        JButton undoButton = new JButton("Undo");
+
         MovieRecordListener listener = new MovieRecordListener(nameField, idField);
         addButton.addActionListener(listener);
-        randomMovieButton.addActionListener(new RandomMovieListener());
         movieInfoButton.addActionListener(new MovieSiteListener());
         removeButton.addActionListener(new MovieRemoveListener());
-        listMovies.addActionListener(new MovieListListener());
         clearDB.addActionListener(new MovieClearAllListener());
+        listMoviesText.addActionListener(new MovieListListener());
+
+        JTextArea moviesList = MovieListListener.listenLabel();
+        JScrollPane scrollableArea= new JScrollPane(moviesList);
+        scrollableArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
 
         container.add(nameText);
         container.add(nameField);
+        container.add(listMoviesText);
         container.add(idText);
         container.add(idField);
+        container.add(scrollableArea);
         container.add(removeButton);
         container.add(addButton);
         container.add(new JLabel(" "));
-        container.add(new JLabel(" "));
-        container.add(randomMovieButton);
         container.add(movieInfoButton);
-        container.add(listMovies);
         container.add(clearDB);
+        container.add(undoButton);
 
-        TextFileManipulator.textFileStuff(ListenerClass.getDB());
+
     }
 
-    public JFrame getFrame() {
-        return frame;
-    }
+
 }
