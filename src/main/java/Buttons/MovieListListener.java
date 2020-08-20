@@ -1,8 +1,6 @@
 package Buttons;
 
 import java.awt.event.*;
-import MovieStuff.MovieDB;
-
 import javax.swing.*;
 
 public class MovieListListener extends ListenerClass implements ActionListener {

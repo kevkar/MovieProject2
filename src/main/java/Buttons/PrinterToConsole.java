@@ -1,9 +1,8 @@
 package Buttons;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
+// scrollable area with all the movies go here
 public class PrinterToConsole  {
 
     private static JLabel printer = new JLabel("Output printed here",SwingConstants.CENTER);

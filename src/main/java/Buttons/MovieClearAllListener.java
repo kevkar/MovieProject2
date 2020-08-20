@@ -3,8 +3,6 @@ package Buttons;
 import java.awt.event.*;
 import java.io.FileNotFoundException;
 
-import MovieStuff.MovieDB;
-
 public class MovieClearAllListener extends ListenerClass implements ActionListener {
 
     public MovieClearAllListener() {

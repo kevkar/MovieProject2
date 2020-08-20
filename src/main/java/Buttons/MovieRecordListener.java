@@ -4,7 +4,6 @@ import java.awt.event.*;
 import java.io.IOException;
 import javax.swing.*;
 
-
 public class MovieRecordListener extends ListenerClass implements ActionListener {
 
     private static JTextField nameField;
@@ -32,10 +31,9 @@ public class MovieRecordListener extends ListenerClass implements ActionListener
     @Override
     public void actionPerformed(ActionEvent ae) {
         try {
-
             db.addMovieGUI();
-
             MovieListListener.listenLabel().setText(db.toString());
+
         } catch (IOException e) {
             e.printStackTrace();
         }

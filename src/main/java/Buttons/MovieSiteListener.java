@@ -1,7 +1,6 @@
 package Buttons;
 
 import java.awt.event.*;
-import MovieStuff.MovieDB;
 
 public class MovieSiteListener extends ListenerClass implements ActionListener {
 

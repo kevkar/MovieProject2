@@ -1,13 +1,7 @@
 package Buttons;
 
 import java.awt.event.*;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import MovieStuff.MovieDB;
-
-import javax.xml.bind.Marshaller;
-
 
 public class MovieRemoveListener extends ListenerClass implements ActionListener  {
 
