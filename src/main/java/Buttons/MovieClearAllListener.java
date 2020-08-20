@@ -14,6 +14,7 @@ public class MovieClearAllListener extends ListenerClass implements ActionListen
         try {
             db.reset();
             db.clearTextFile();
+            MovieListListener.setList();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

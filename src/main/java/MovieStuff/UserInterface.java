@@ -20,7 +20,7 @@ public class UserInterface implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Movie Time");
-        frame.setPreferredSize(new Dimension(800, 600));
+        frame.setPreferredSize(new Dimension(750, 600));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +64,7 @@ public class UserInterface implements Runnable {
         JTextArea moviesList = MovieListListener.listenLabel();
         JScrollPane scrollableArea= new JScrollPane(moviesList);
         scrollableArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        JOptionPane optioner = new JOptionPane();
 
         container.add(nameText);
         container.add(nameField);
@@ -77,7 +78,6 @@ public class UserInterface implements Runnable {
         container.add(movieInfoButton);
         container.add(clearDB);
         container.add(randomMovie);
-
 
     }
 

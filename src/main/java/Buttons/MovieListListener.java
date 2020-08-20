@@ -14,6 +14,11 @@ public class MovieListListener extends ListenerClass implements ActionListener {
         label.setText(db.toString());
     }
 
+    public static void setList()
+    {
+        listenLabel().setText(db.toString());
+    }
+
     public static JTextArea listenLabel()
     {
         return label;
