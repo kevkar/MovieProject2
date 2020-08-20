@@ -21,18 +21,28 @@ public class MovieRecordListener extends ListenerClass implements ActionListener
         return nameField;
     }
 
+    public static String text()
+    {
+        return nameField.getText();
+    }
+
+    public static String number()
+    {
+        return idField.getText();
+    }
+
     public static JTextField IDField() {return idField;}
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         try {
-            if (db.isMovieDuplicate(MovieRecordListener.nameField().getText()))
-            {
+            if (db.isMovieDuplicate(MovieRecordListener.nameField().getText())) {
                 PrinterToConsole.printText("Movie already in database!");
                 return;
             }
 
             db.addMovieGUI();
+
             MovieListListener.listenLabel().setText(db.toString());
         } catch (IOException e) {
             e.printStackTrace();

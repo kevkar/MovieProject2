@@ -1,6 +1,8 @@
 package MovieStuff;
 
 import Buttons.*;
+import javafx.print.Printer;
+
 import java.io.*;
 import java.net.URI;
 import java.util.ArrayList;
@@ -44,7 +46,7 @@ public class MovieDB {
 
         //adds movies using the text fields for the GUI and sorts movies
         public void addMovieGUI() throws IOException {
-            String text = MovieRecordListener.nameField().getText();
+            String text = MovieRecordListener.text();
 
             if (text.isEmpty()) {
                 PrinterToConsole.printText("Please enter a movie!");
@@ -53,12 +55,15 @@ public class MovieDB {
                     Movie movie = new Movie(text);
                     addMovie(movie);
                 } catch (Exception e) {
-                    if (MovieRecordListener.IDField().getText().equals("")) {
-                        PrinterToConsole.printText("Please enter length.");
-                    } else {
-                        PrinterToConsole.printText("Invalid Movie");
+                    try {
+                        int length = Integer.parseInt(MovieRecordListener.number());
+                        Movie movie = new Movie(text, length);
+                        addMovie(movie);
+                    } catch (NumberFormatException e2) {
+                        PrinterToConsole.printText("Enter movie length as number 10-400");
                     }
                 }
+
             }
             sortMovies();
         }
@@ -128,9 +133,8 @@ public class MovieDB {
             }
         }
 
-        //searches movie on letterboxd using GUI
-       public void letterboxd(String name) {
-          // String boxText = MovieRecordListener.nameField().getText();
+        //searches movie on google using GUI
+       public void googleMovie(String name) {
            if (name.isEmpty()) {
                PrinterToConsole.printText("Try typing something first...");
            } else {
@@ -143,8 +147,9 @@ public class MovieDB {
        }
 
     public void openMovieSite(String name) throws IOException {
-        String link = "https://letterboxd.com/search/" ;
+        String link = "https://www.google.com/search?q=" ;
         link += name.replace(' ','+');
+        link += "+length";
         java.awt.Desktop.getDesktop().browse(URI.create(link));
     }
 
