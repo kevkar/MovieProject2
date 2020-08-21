@@ -70,7 +70,7 @@ public class MovieDB {
             }
         }
         sortMovies();
-        MovieListListener.listenLabel().setText(ListenerClass.getDB().toString());
+        MovieListListener.listenLabel().setText(ListenerInterface.db.toString());
     }
 
         // prints out all movies in db
@@ -95,7 +95,7 @@ public class MovieDB {
                 movieList.remove(movie);
                 PrinterToConsole.printText("Movie " + '"' + title + '"' + " removed.");
                 try {
-                    ListenerClass.getDB().clearAndAddMovies();
+                    ListenerInterface.db.clearAndAddMovies();
                     MovieListListener.setList();
                 } catch (IOException e) {
                     e.printStackTrace();

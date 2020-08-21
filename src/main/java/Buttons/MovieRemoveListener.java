@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.io.IOException;
 
 //removes a movie and then sorts list
-public class MovieRemoveListener extends ListenerClass implements ActionListener  {
+public class MovieRemoveListener implements ListenerInterface  {
 
     public MovieRemoveListener() {
     }

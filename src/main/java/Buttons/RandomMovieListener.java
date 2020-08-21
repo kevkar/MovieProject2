@@ -3,7 +3,7 @@ package Buttons;
 import java.awt.event.*;
 
 // prints random movie
-public class RandomMovieListener extends ListenerClass implements ActionListener {
+public class RandomMovieListener implements ListenerInterface {
 
     public RandomMovieListener() {
     }

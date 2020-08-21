@@ -4,7 +4,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 // prints the database
-public class MovieListListener extends ListenerClass implements ActionListener {
+public class MovieListListener implements ListenerInterface {
 
     private static JTextArea label = new JTextArea(db.toString());
 

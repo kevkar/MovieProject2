@@ -3,7 +3,7 @@ package Buttons;
 import java.awt.event.*;
 
 // opens google search of movie for special cases
-public class MovieSiteListener extends ListenerClass implements ActionListener {
+public class MovieSiteListener implements ListenerInterface {
 
     public MovieSiteListener() { }
 

@@ -34,7 +34,7 @@ public class UserInterface implements Runnable {
     //creates the grid and buttons
     private void createComponents(Container container) throws Exception {
 
-        TextFileManipulator.makeTextFile(ListenerClass.getDB());
+        TextFileManipulator.makeTextFile(ListenerInterface.db);
 
         GridLayout layout = new GridLayout(4, 3);
         container.setLayout(layout);

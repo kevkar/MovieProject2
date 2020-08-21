@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.swing.*;
 
 //listens to namefield and numberfield to add movies
-public class MovieRecordListener extends ListenerClass implements ActionListener {
+public class MovieRecordListener implements ListenerInterface {
 
     private static JTextField nameField;
     private static JTextField idField;
