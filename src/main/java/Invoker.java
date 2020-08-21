@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class Invoker {
 
+    // sets look and feel, starts swing program
     public static void StartProgram()
     {
         try {
@@ -13,5 +14,4 @@ public class Invoker {
         UserInterface ui = new UserInterface();
         SwingUtilities.invokeLater(ui);
     }
-
 }

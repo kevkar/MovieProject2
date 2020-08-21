@@ -29,8 +29,6 @@ public class MovieRecordListener extends ListenerClass implements ActionListener
     public void actionPerformed(ActionEvent ae) {
         try {
             db.addMovieGUI();
-            MovieListListener.listenLabel().setText(db.toString());
-
         } catch (IOException e) {
             e.printStackTrace();
         }

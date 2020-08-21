@@ -14,16 +14,11 @@ public class UserInterface implements Runnable {
 
     public UserInterface() {    }
 
-    public JFrame getFrame() {
-        return frame;
-    }
-
     //creates GUI with title, dimensions
     @Override
     public void run() {
         frame = new JFrame("Movie Time");
         frame.setPreferredSize(new Dimension(725, 450));
-
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         try {
@@ -39,7 +34,7 @@ public class UserInterface implements Runnable {
     //creates the grid and buttons
     private void createComponents(Container container) throws Exception {
 
-        TextFileManipulator.textFileStuff(ListenerClass.getDB());
+        TextFileManipulator.makeTextFile(ListenerClass.getDB());
 
         GridLayout layout = new GridLayout(4, 3);
         container.setLayout(layout);

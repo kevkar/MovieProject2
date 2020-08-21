@@ -7,7 +7,6 @@ public class Movie implements Comparable<Movie>{
     private String name;
     private int length;
 
-
     // two constructors, one for name and length and one for just name
     public Movie(String name) throws Exception{
         this.name = name;

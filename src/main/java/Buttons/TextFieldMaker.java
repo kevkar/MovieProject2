@@ -2,7 +2,7 @@ package Buttons;
 
 import javax.swing.*;
 
-//makes a new text field
+//makes a new JTextField
 public class TextFieldMaker implements LabelsAndText {
 
     @Override

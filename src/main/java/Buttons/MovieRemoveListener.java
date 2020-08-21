@@ -12,12 +12,6 @@ public class MovieRemoveListener extends ListenerClass implements ActionListener
     @Override
     public void actionPerformed(ActionEvent ae) {
         db.removeMovie(MovieRecordListener.text());
-        try {
-            db.clearAndAddMovies();
-            MovieListListener.setList();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 }

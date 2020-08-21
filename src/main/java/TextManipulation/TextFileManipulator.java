@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class TextFileManipulator {
 
-    public static void textFileStuff(MovieDB db) throws Exception {
+    public static void makeTextFile(MovieDB db) throws Exception {
         File file = new File("MovieTestFile");
         Scanner scanner = new Scanner(file);
 
