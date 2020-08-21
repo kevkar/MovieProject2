@@ -9,6 +9,7 @@ public class Invoker {
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch(Exception ignored){}
+
         UserInterface ui = new UserInterface();
         SwingUtilities.invokeLater(ui);
     }
