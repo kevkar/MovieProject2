@@ -5,9 +5,6 @@ import java.io.FileNotFoundException;
 
 public class MovieClearAllListener extends ListenerClass implements ActionListener {
 
-    public MovieClearAllListener() {
-    }
-
     // resets database with GUI
     @Override
     public void actionPerformed(ActionEvent ae) {

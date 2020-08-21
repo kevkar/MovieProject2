@@ -13,7 +13,7 @@ public class ComponentsList {
         JComponent idField = new TextFieldMaker().makeComponent("for emergencies only");
         JButton removeButton = new ButtonMaker().makeButton("Remove!",new MovieRemoveListener());
         JButton movieInfoButton = new ButtonMaker().makeButton("Movie Info", new MovieSiteListener());
-        JButton clearDB = new ButtonMaker().makeButton("Remove All Movies", new MovieRemoveListener());
+        JButton clearDB = new ButtonMaker().makeButton("Remove All Movies", new MovieClearAllListener());
         JButton addButton = new ButtonMaker().makeButton("Add!",new MovieRecordListener((JTextField)nameField,(JTextField)idField));
         JComponent listMoviesText = new LabelMaker().makeComponent("List of Movies");
         ((JLabel) listMoviesText).setVerticalAlignment(JLabel.BOTTOM);
