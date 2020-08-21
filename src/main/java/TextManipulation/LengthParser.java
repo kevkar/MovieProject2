@@ -1,4 +1,4 @@
-package MovieStuff;
+package TextManipulation;
 
 import org.jsoup.*;
 import org.jsoup.nodes.Document;

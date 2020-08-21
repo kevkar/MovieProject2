@@ -1,7 +1,7 @@
 package MovieStuff;
 
 import Buttons.*;
-import javafx.print.Printer;
+import TextManipulation.PrinterToConsole;
 
 import java.io.*;
 import java.net.URI;

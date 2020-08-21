@@ -1,6 +1,7 @@
 package MovieStuff;
 
 import Buttons.*;
+import TextManipulation.TextFileManipulator;
 
 import java.awt.*;
 import java.util.ArrayList;

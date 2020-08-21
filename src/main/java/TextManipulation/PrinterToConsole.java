@@ -1,4 +1,4 @@
-package Buttons;
+package TextManipulation;
 
 import javax.swing.*;
 

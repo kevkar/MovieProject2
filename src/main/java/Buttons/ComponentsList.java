@@ -1,5 +1,7 @@
 package Buttons;
 
+import TextManipulation.PrinterToConsole;
+
 import javax.swing.*;
 import java.util.ArrayList;
 

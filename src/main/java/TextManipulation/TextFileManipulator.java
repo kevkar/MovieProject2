@@ -1,4 +1,7 @@
-package MovieStuff;
+package TextManipulation;
+
+import MovieStuff.Movie;
+import MovieStuff.MovieDB;
 
 import java.io.File;
 import java.util.Scanner;

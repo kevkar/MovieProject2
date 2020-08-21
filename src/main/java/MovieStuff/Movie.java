@@ -1,7 +1,6 @@
 package MovieStuff;
 
-import java.io.IOException;
-import java.net.URI;
+import TextManipulation.LengthParser;
 
 public class Movie implements Comparable<Movie>{
 
