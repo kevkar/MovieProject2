@@ -70,7 +70,7 @@ public class MovieDB {
             }
         }
         sortMovies();
-        MovieListListener.listenLabel().setText(ListenerInterface.db.toString());
+        MovieListListener.setList();
     }
 
         // prints out all movies in db

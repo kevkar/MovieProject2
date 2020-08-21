@@ -3,9 +3,9 @@ package Buttons;
 import java.awt.event.*;
 
 // prints random movie
-public class RandomMovieListener implements ListenerInterface {
+public class MovieRandomListener implements ListenerInterface {
 
-    public RandomMovieListener() {
+    public MovieRandomListener() {
     }
 
     @Override

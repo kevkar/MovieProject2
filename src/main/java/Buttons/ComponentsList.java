@@ -26,7 +26,7 @@ public class ComponentsList {
 
         JButton movieInfoButton = new ButtonMaker().makeButton("Movie Info", new MovieSiteListener());
         JButton clearDB = new ButtonMaker().makeButton("Remove All Movies", new MovieClearAllListener());
-        JButton randomMovie = new ButtonMaker().makeButton("Random Movie",new RandomMovieListener());
+        JButton randomMovie = new ButtonMaker().makeButton("Random Movie",new MovieRandomListener());
 
         ArrayList<JComponent> components = new ArrayList();
         components.add(nameText);
