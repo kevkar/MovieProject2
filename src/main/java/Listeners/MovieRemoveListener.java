@@ -1,7 +1,6 @@
-package Buttons;
+package Listeners;
 
 import java.awt.event.*;
-import java.io.IOException;
 
 //removes a movie and then sorts list
 public class MovieRemoveListener implements ListenerInterface  {

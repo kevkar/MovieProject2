@@ -1,4 +1,4 @@
-package Buttons;
+package Listeners;
 
 import java.awt.event.*;
 import java.io.FileNotFoundException;
@@ -9,9 +9,7 @@ public class MovieClearAllListener implements ListenerInterface {
     @Override
     public void actionPerformed(ActionEvent ae) {
         try {
-            db.reset();
-            db.clearTextFile();
-            MovieListListener.setList();
+            db.clearAll();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

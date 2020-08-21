@@ -1,5 +1,10 @@
-package Buttons;
+package MovieStuff;
 
+import Buttons.ButtonMaker;
+import LabelsAndText.LabelMaker;
+import LabelsAndText.ScrollPane;
+import LabelsAndText.TextFieldMaker;
+import Listeners.*;
 import TextManipulation.PrinterToConsole;
 
 import javax.swing.*;
@@ -32,12 +37,15 @@ public class ComponentsList {
         components.add(nameText);
         components.add(nameField);
         components.add(listMoviesText);
+
         components.add(idText);
         components.add(idField);
         components.add(scrollableArea);
+
         components.add(removeButton);
         components.add(addButton);
         components.add(stuffToPrint);
+
         components.add(movieInfoButton);
         components.add(clearDB);
         components.add(randomMovie);

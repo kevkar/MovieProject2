@@ -1,4 +1,4 @@
-package Buttons;
+package LabelsAndText;
 
 import javax.swing.*;
 

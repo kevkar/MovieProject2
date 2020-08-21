@@ -1,4 +1,4 @@
-package Buttons;
+package Listeners;
 
 import MovieStuff.MovieDB;
 
@@ -11,5 +11,4 @@ public interface ListenerInterface extends ActionListener {
 
     @Override
     void actionPerformed(ActionEvent ae);
-
 }

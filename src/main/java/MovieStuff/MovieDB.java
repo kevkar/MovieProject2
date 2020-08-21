@@ -1,6 +1,8 @@
 package MovieStuff;
 
-import Buttons.*;
+import Listeners.ListenerInterface;
+import Listeners.MovieListListener;
+import Listeners.MovieRecordListener;
 import TextManipulation.PrinterToConsole;
 
 import java.io.*;
@@ -182,6 +184,12 @@ public class MovieDB {
     public void clearAndAddMovies() throws IOException {
         clearTextFile();
         appendMoviesToFile();
+    }
+
+    public void clearAll() throws FileNotFoundException {
+        reset();
+        clearTextFile();
+        MovieListListener.setList();
     }
 }
 

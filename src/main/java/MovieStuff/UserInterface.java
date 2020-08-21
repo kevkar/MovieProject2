@@ -1,6 +1,6 @@
 package MovieStuff;
 
-import Buttons.*;
+import Listeners.ListenerInterface;
 import TextManipulation.TextFileManipulator;
 
 import java.awt.*;
