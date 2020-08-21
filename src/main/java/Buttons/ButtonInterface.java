@@ -6,8 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+// buttons have set font in FontClass and have text + action listener
 public interface ButtonInterface {
     Font font = FontClass.getFont();
 
-    public JButton makeButton(String text, ActionListener listener);
+    JButton makeButton(String text, ActionListener listener);
 }

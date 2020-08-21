@@ -2,6 +2,7 @@ package Buttons;
 
 import javax.swing.*;
 
+//makes a new JLabel
 public class LabelMaker implements LabelsAndText{
 
     @Override

@@ -3,6 +3,7 @@ package Buttons;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
+// returns a JButton with text/action
 public class ButtonMaker implements ButtonInterface {
     JButton button = new JButton();
 
@@ -12,7 +13,7 @@ public class ButtonMaker implements ButtonInterface {
         button.setFont(font);
         button.addActionListener(listener);
 
-        return (JButton) button;
+        return button;
     }
 
 }

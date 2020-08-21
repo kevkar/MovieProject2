@@ -3,9 +3,9 @@ package Buttons;
 import java.awt.event.*;
 import java.io.FileNotFoundException;
 
+// clears all movies in database
 public class MovieClearAllListener extends ListenerClass implements ActionListener {
 
-    // resets database with GUI
     @Override
     public void actionPerformed(ActionEvent ae) {
         try {

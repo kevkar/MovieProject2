@@ -2,6 +2,7 @@ package Buttons;
 
 import javax.swing.*;
 
+// makes the scrollpane of the movies list
 public class ScrollPane {
 
     private static JTextArea moviesList = MovieListListener.listenLabel();
