@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class TextFileManipulator {
 
-    public static void makeTextFile(MovieDB db) throws Exception {
-        File file = new File("MovieTestFile");
+    public static void makeTextFile(MovieDB db,String fileName) throws Exception {
+        File file = new File(fileName);
         Scanner scanner = new Scanner(file);
 
         while (scanner.hasNextLine()) {

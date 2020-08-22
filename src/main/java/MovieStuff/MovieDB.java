@@ -11,25 +11,27 @@ import java.util.Random;
 
 public class MovieDB {
     // holds movies in an array list
-    private String fileName = "MovieTestFIle";
+    private String fileName;
     private ArrayList<Movie> movieList = new ArrayList();
 
-    public MovieDB() {};
+    public MovieDB() {
+        this.fileName = "MovieDatabaseFile";
+    };
 
     public ArrayList<Movie> getMovieList() {
         return movieList;
     }
 
+    public String getFileName() {
+        return this.fileName;
+    }
+
     // adds movies to the array list
     public void addMovie(Movie movie) {
-        if (isMovieDuplicate(movie.getName())) {
-            PrinterToConsole.printText("Movie " + '"' + movie.getName() + '"' + " already in database.");
-        } else if (movie.getLength() > 400) {
+        if (movie.getLength() > 400) {
             PrinterToConsole.printText("Why are you trying to watch a 6 hour movie c'mon.");
         } else if(movie.getLength() < 10) {
             PrinterToConsole.printText("That is not a real length");
-        } else if (movie.getName().isEmpty()) {
-            PrinterToConsole.printText("You forgot to enter a movie");
         } else {
             movieList.add(movie);
             PrinterToConsole.printText('"' + movie.getName() + '"' + " added with time " + movie.getRealTime());
@@ -59,24 +61,24 @@ public class MovieDB {
         }
 
         // if movie length can't be found on google, try adding it manually
-         try {
-             Movie movie = new Movie(text);
-             addMovie(movie);
-         } catch (Exception e) {
-             try {
-                 int length = Integer.parseInt(number);
-                 Movie movie = new Movie(text, length);
-                 addMovie(movie);
-             } catch (NumberFormatException e2) {
-                 PrinterToConsole.printText("Enter movie length as number 10-400");
-             }
-         }
+        try {
+            Movie movie = new Movie(text);
+            addMovie(movie);
+        } catch (Exception e) {
+            try {
+                int length = Integer.parseInt(number);
+                Movie movie = new Movie(text, length);
+                addMovie(movie);
+            } catch (NumberFormatException e2) {
+                PrinterToConsole.printText("Enter movie length as number 10-400");
+            }
+        }
 
         sortMovies();
         return true;
     }
 
-        // prints out all movies in db
+    // prints out all movies in db
     @Override
     public String toString() {
         if (movieList.isEmpty()) {
@@ -190,7 +192,5 @@ public class MovieDB {
     public void clearAll() throws FileNotFoundException {
         reset();
         clearTextFile();
-
     }
 }
-

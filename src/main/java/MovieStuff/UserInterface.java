@@ -33,8 +33,9 @@ public class UserInterface implements Runnable {
 
     //creates the grid and buttons
     private void createComponents(Container container) throws Exception {
+        MovieDB db = ListenerInterface.db;
 
-        TextFileManipulator.makeTextFile(ListenerInterface.db);
+        TextFileManipulator.makeTextFile(db,db.getFileName());
 
         GridLayout layout = new GridLayout(4, 3);
         container.setLayout(layout);

@@ -1,5 +1,7 @@
 package Listeners;
 
+import TextManipulation.PrinterToConsole;
+
 import java.awt.event.*;
 import java.io.FileNotFoundException;
 

@@ -14,8 +14,7 @@ public class MovieListListener implements ListenerInterface {
         label.setText(db.toString());
     }
 
-    public static void setList()
-    {
+    public static void setList() {
         listenLabel().setText(db.toString());
     }
 
