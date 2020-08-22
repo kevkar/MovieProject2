@@ -13,6 +13,7 @@ public class Movie implements Comparable<Movie>{
         this.length = LengthParser.getLength(name);
     }
 
+    // for manual adding
     public Movie(String name, int length)
     {
         this.name = name;
