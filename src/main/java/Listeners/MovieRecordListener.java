@@ -28,7 +28,8 @@ public class MovieRecordListener implements ListenerInterface {
     @Override
     public void actionPerformed(ActionEvent ae) {
         try {
-            db.addMovieGUI();
+            if(db.addMovieGUI(text(),number()))
+                MovieListListener.setList();
         } catch (IOException e) {
             e.printStackTrace();
         }

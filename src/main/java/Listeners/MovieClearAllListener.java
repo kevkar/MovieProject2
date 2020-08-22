@@ -10,6 +10,7 @@ public class MovieClearAllListener implements ListenerInterface {
     public void actionPerformed(ActionEvent ae) {
         try {
             db.clearAll();
+            MovieListListener.setList();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

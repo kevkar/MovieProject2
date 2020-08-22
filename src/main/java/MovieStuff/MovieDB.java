@@ -1,8 +1,6 @@
 package MovieStuff;
 
 import Listeners.ListenerInterface;
-import Listeners.MovieListListener;
-import Listeners.MovieRecordListener;
 import TextManipulation.PrinterToConsole;
 
 import java.io.*;
@@ -13,6 +11,7 @@ import java.util.Random;
 
 public class MovieDB {
     // holds movies in an array list
+    private String fileName = "MovieTestFIle";
     private ArrayList<Movie> movieList = new ArrayList();
 
     public MovieDB() {};
@@ -47,32 +46,34 @@ public class MovieDB {
     }
 
     //adds movies using the text fields for the GUI and sorts movies
-    public void addMovieGUI() throws IOException {
-        String text = MovieRecordListener.text();
+    public boolean addMovieGUI(String text, String number) throws IOException {
 
         if (isMovieDuplicate(text)) {
             PrinterToConsole.printText("Movie already in database!");
-            return;
+            return false;
         }
 
         if (text.isEmpty()) {
             PrinterToConsole.printText("Please enter a movie!");
-        } else {
-            try {
-                Movie movie = new Movie(text);
-                addMovie(movie);
-            } catch (Exception e) {
-                try {
-                    int length = Integer.parseInt(MovieRecordListener.number());
-                    Movie movie = new Movie(text, length);
-                    addMovie(movie);
-                } catch (NumberFormatException e2) {
-                    PrinterToConsole.printText("Enter movie length as number 10-400");
-                }
-            }
+            return false;
         }
+
+        // if movie length can't be found on google, try adding it manually
+         try {
+             Movie movie = new Movie(text);
+             addMovie(movie);
+         } catch (Exception e) {
+             try {
+                 int length = Integer.parseInt(number);
+                 Movie movie = new Movie(text, length);
+                 addMovie(movie);
+             } catch (NumberFormatException e2) {
+                 PrinterToConsole.printText("Enter movie length as number 10-400");
+             }
+         }
+
         sortMovies();
-        MovieListListener.setList();
+        return true;
     }
 
         // prints out all movies in db
@@ -98,7 +99,7 @@ public class MovieDB {
                 PrinterToConsole.printText("Movie " + '"' + title + '"' + " removed.");
                 try {
                     ListenerInterface.db.clearAndAddMovies();
-                    MovieListListener.setList();
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -168,7 +169,7 @@ public class MovieDB {
     }
 
     public void appendMoviesToFile() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("MovieTestFile", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
         for (Movie film : movieList)
             writer.append(film.getLength() + " " + film.getName() + "\n");
 
@@ -176,7 +177,7 @@ public class MovieDB {
     }
 
     public void clearTextFile() throws FileNotFoundException {
-        PrintWriter writer = new PrintWriter("MovieTestFile");
+        PrintWriter writer = new PrintWriter(fileName);
         writer.print("");
         writer.close();
     }
@@ -189,7 +190,7 @@ public class MovieDB {
     public void clearAll() throws FileNotFoundException {
         reset();
         clearTextFile();
-        MovieListListener.setList();
+
     }
 }
 

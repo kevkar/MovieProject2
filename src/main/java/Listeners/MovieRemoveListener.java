@@ -2,7 +2,7 @@ package Listeners;
 
 import java.awt.event.*;
 
-//removes a movie and then sorts list
+//removes a movie if movie in db then sorts list
 public class MovieRemoveListener implements ListenerInterface  {
 
     public MovieRemoveListener() {
@@ -10,7 +10,8 @@ public class MovieRemoveListener implements ListenerInterface  {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        db.removeMovie(MovieRecordListener.text());
+        if(db.removeMovie(MovieRecordListener.text()))
+            MovieListListener.setList();;
     }
 
 }
