@@ -84,11 +84,12 @@ public class MovieDB {
         if (movieList.isEmpty()) {
             return "No movies to show.";
         }
-        String theMovies = "";
+        //String theMovies = "";
+        StringBuilder theMovies = new StringBuilder("");
         for (Movie movie: movieList) {
-            theMovies += movie +"\n";
+            theMovies.append(movie + "\n");
         }
-        return theMovies;
+        return theMovies.toString();
     }
 
     // removes a movie from list with linear search
