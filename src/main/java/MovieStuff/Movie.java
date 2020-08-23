@@ -36,7 +36,7 @@ public class Movie implements Comparable<Movie>{
         if (this.length % 60 == 0) {
             realTime = sb.append('0').toString();
         }
-        if ((this.length % 60) < 10 && ((this.length % 60) > 1)) {
+        if ((this.length % 60) < 10 && ((this.length % 60) > 0)) {
             realTime = sb.insert(2,'0').toString();
         }
         return realTime;
