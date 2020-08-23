@@ -6,6 +6,6 @@ public class FontClass {
 
     public static Font getFont()
     {
-        return new Font("Yu Gothic UI Semibold", Font.PLAIN,21);
+        return new Font("Yu Gothic Medium", Font.PLAIN,21);
     }
 }

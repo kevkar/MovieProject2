@@ -16,7 +16,12 @@ public class MovieDB {
 
     public MovieDB() {
         this.fileName = "MovieDatabaseFile";
-    };
+    }
+
+    public MovieDB(String name)
+    {
+        this.fileName = name;
+    }
 
     public ArrayList<Movie> getMovieList() {
         return movieList;
