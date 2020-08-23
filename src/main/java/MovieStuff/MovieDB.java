@@ -1,6 +1,5 @@
 package MovieStuff;
 
-import Listeners.ListenerInterface;
 import TextManipulation.PrinterToConsole;
 
 import java.io.*;
@@ -89,7 +88,6 @@ public class MovieDB {
         if (movieList.isEmpty()) {
             return "No movies to show.";
         }
-        //String theMovies = "";
         StringBuilder theMovies = new StringBuilder("");
         for (Movie movie: movieList) {
             theMovies.append(movie + "\n");
@@ -106,8 +104,7 @@ public class MovieDB {
                 movieList.remove(movie);
                 PrinterToConsole.printText("Movie " + '"' + title + '"' + " removed.");
                 try {
-                    ListenerInterface.db.clearAndAddMovies();
-
+                   clearAndAddMovies();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
