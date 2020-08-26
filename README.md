@@ -3,7 +3,7 @@
 
 Welcome to MovieTime! Make your personal list of movies you want to see, arranged by length.
 
-This project uses the Java Swing framework to make the GUI, Maven for dependencies, and JSoup to get html text from google searches.
+This project uses the Java Swing framework to make the GUI, Maven for dependencies, and the JSoup library to get html text from google searches.
 
 # Installation Instructions #
 
