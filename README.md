@@ -5,6 +5,14 @@ Welcome to MovieTime! Make your personal list of movies you want to see, arrange
 
 This project uses the Java Swing framework to make the GUI, Maven for dependencies, and JSoup to get html text from google searches.
 
+# Installation Instructions #
+
+All you have to do is add JSoup to Maven by adding to your Maven pom.xml file:
+
+![jsoupmaven](https://i.imgur.com/PIjhgtR.png)
+
+# How to Use #
+
 To add movies, just type in the name in the top box and and hit Add! Nine times out of ten, the movie will be added with its correct time to the list on the right. 
 
 ![Movie Adding](https://media1.giphy.com/media/SUL0Ex2OzEKyS2DJKS/giphy.gif)
