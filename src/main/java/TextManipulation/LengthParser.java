@@ -19,7 +19,7 @@ public class LengthParser {
         Matcher matcher = pattern.matcher(document.toString());
         String length = "";
 
-        /* three formats to match:
+        /* three formats for movie length:
             1h 49m
             2 hours
             57 minutes
