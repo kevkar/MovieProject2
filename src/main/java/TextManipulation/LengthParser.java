@@ -19,7 +19,7 @@ public class LengthParser {
         Matcher matcher = pattern.matcher(document.toString());
         String length = "";
 
-        /* three formats to march:
+        /* three formats to match:
             1h 49m
             2 hours
             57 minutes
